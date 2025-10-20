@@ -1,39 +1,41 @@
-📅 Agendamento Online
+// frontend/src/App.jsx
+import React from 'react'
+import { Link, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Services from './pages/Services'
+import Gallery from './pages/Gallery'
+import Contact from './pages/Contact'
+import Agendar from './pages/Agendar'
 
-Clientes agendam direto pelo app personalizado, sem precisar de mensagens.
+export default function App(){
+  return (
+    <div className='app-root'>
+      <header className='site-header'>
+        <div className='brand'>Barbearia Dom Pablo</div>
+        <nav className='nav'>
+          <Link to='/'>Home</Link>
+          <Link to='/services'>Serviços</Link>
+          <Link to='/gallery'>Galeria</Link>
+          <Link to='/contact'>Contato</Link>
+          <Link className='cta' to='/agendar'>Agendar</Link>
+        </nav>
+      </header>
 
-Lembretes automáticos que reduzem faltas.
+      <main className='site-main'>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/services' element={<Services/>} />
+          <Route path='/gallery' element={<Gallery/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/agendar' element={<Agendar/>} />
+          <Route path='*' element={<Home/>} />
+        </Routes>
+      </main>
 
-🪑 Gestão de Profissionais
+      <footer className='site-footer'>
+        <div>© {new Date().getFullYear()} Barbearia Dom Pablo</div>
+      </footer>
+    </div>
+  )
+}
 
-Controle individual de agendas, comissões e desempenho de cada barbeiro.
-
-💰 Financeiro Inteligente
-
-Controle de caixa, relatórios de faturamento e movimentações.
-
-Tudo em tempo real e 100% digital.
-
-📲 App personalizado para seus clientes
-
-Sua barbearia com identidade própria na tela do cliente.
-
-Mais agilidade e fidelização!
-
-🎫 Gestão de Clube de Assinaturas
-
-Crie planos mensais com cortes inclusos, fidelize clientes e garanta receita recorrente.
-
-Cobrança automática no cartão!
-
-🔔 Notificações automáticas
-
-Envio de lembretes, promoções e mensagens personalizadas.
-
-⭐ Programa de fidelidade
-
-Pontos por corte que viram prêmios. Seu cliente volta sempre!
-
-📊 Relatórios e insights
-
-Veja quais dias vendem mais, quem corta mais e tome decisões com base em dados.
